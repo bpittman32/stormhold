@@ -1,0 +1,6 @@
+s=open('src/shell.html').read()
+css=open('src/style.css').read()
+js='\n'.join(open('src/'+f).read() for f in ['data.js','sprites.js','art.js','engine.js','ui.js'])
+s=s.replace('/*CSS*/',css).replace('/*JS*/',js)
+open('index.html','w').write(s)
+print(len(s))
